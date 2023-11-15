@@ -1,3 +1,7 @@
+/*
+TEKST ZADATKA I TEST CASEOVI: https://github.com/emanuelkufrin/tvz_c-2023/blob/3fb87c5a4ffe3b751018024e98483d9c78c9b868/tekstovi%20i%20test%20caseovi/%5B3%5D%20HAC.pdf
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
