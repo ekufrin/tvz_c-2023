@@ -1,18 +1,5 @@
 /*
-Prijatelj pohađa kolegij programiranje u C, i na zadatku na vježbi mu dolazi sljedeći zadatak:
-Potrebno je učitati dva niza, A i B koji su jednake duljine (zadano unosom varijable N). Nakon toga, potrebno je usporediti
-svaki element niza A sa elementom na istom indeksu niza B. Ako je element niza A manji od onog iz B, zapišite 0, u
-suprotnom zapišite 1. Tako dobiveni binarni broj je potrebno pretvoriti u dekadski. Duljina nizova A i B neće biti veća od 50.
-Pomognite prijatelju da uspješno riješi zadatak 
-*/
-
-//TEST CASE
-/*Primjer ulaza:
-3
-3 9 9
-8 0 -45
-Primjer izlaza:
-3
+TEKST ZADATKA I TEST CASEOVI: https://github.com/emanuelkufrin/tvz_c-2023/blob/1571681268b79315225a2150e491f4b7b5f1671d/tekstovi%20i%20test%20caseovi/%5B3%5D%20Niz%20compare.pdf
 */
 
 #define _CRT_SECURE_NO_WARNINGS
