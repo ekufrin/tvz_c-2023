@@ -15,8 +15,8 @@
 [3.tjedan](/3.lab)
 [4.tjedan](/4.lab)
 
-### Arhiva zadataka sa proslih godina:
-[Preuzmi](https://drive.google.com/file/d/14EgpLUJnNewvbpXcW72JFF9EyIOoPO7w/view?usp=sharing)
+### Zadaci sa kolokvija
+[2021](/2021.kolokviji)
 
 ## _Kako uploadati Vaš kod na Github?_
 1. Kreirajte Github account.
