@@ -8,12 +8,14 @@
 [2.tjedan](/2.vjezbe)
 [3.tjedan](/3.vjezbe)
 [4.tjedan](/4.vjezbe)
+[5.tjedan](/5.vjezbe)
 
 ### _**Labosi:**_
 [1.tjedan](/1.lab)
 [2.tjedan](/2.lab)
 [3.tjedan](/3.lab)
 [4.tjedan](/4.lab)
+[5.tjedan](/5.lab)
 
 ### Zadaci sa kolokvija
 *[2023](/2023.kolokvij)*
