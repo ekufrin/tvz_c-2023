@@ -111,10 +111,8 @@ int main() {
 	}
 	printf("\n");
 
-	for (int j = 0; j < K; j++) {
-		if (p2[j] != 0) {
+	for (int j = 0; j < brojac; j++) {
 			printf("%3d", p2[j]);
-		}
 	}
 
 	
