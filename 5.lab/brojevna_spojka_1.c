@@ -6,80 +6,51 @@ TEKST ZADATKA I TEST CASEOVI: https://github.com/emanuelkufrin/tvz_c-2023/blob/a
 #include <stdio.h>
 #include<math.h>
 
-void ispis(long long int a, long long int b, long long int c, long long int d, long long* ab, long long* cd) {
-	if (b == 0) {
-		a *= 10;
-	}
-	if (c ==0) {
-		long long int temp = d;
-		d = c;
-		c = temp;
-	}
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 
-	long long int y = d;
-	int brojacD = 0;
+long long int funkcija(long long int x, long long int y) {
 
-	while (y > 0) {
-		brojacD++;
-		y /= 10;
-	}
+    if (x == 0) {
+        return y;  
+    }
+    
+    long long int temp = y;
+    long long int m = 1;
 
-	while (b > 0) {
-		if (a < 0) {
-			a *= 10;
-			a -= (b % 10);
-			b /= 10;
-		}
-		else {
-			a *= 10;
-			a += (b % 10);
-			b /= 10;
-		}
-		
-	}
+    while (temp > 0) {
+        m *= 10;
+        temp /= 10;
+    }
 
-	int znamenka = 0;
+    if (y == 0) {
+        return x * 10;  
+    }
 
-	while (d > 0) {
-		if (c < 0) {
-			c *= 10;
-			c -= (d % 10);
-			d /= 10;
-		}
-		else {
-				c *= 10;
-				znamenka = (d / (long long int)pow(10, brojacD - 1));
-				c += znamenka ;
-				d -= znamenka*(long long int)pow(10,brojacD-1);
-				brojacD--;
-			
-			
-		}
-		
-	}
-
-	*ab = a;
-	*cd = c;
+    if (x < 0) {
+        return x * m - y;
+    }
+    else {
+        return x * m + y;
+    }
 }
 
 int main() {
+    long long int a, b, c, d;
 
-	long long int a=0, b=0, c=0, d = 0;
-	long long int ab = 0, cd = 0;
+    scanf("%lld %lld %lld %lld", &a, &b, &c, &d);
 
-	do {
-		scanf("%lld %lld %lld %lld", &a, &b, &c, &d);
-		if (a < -1000000 || c>1000000 || b < 0 || d>1000000 || d < 0 || c < 0) {
-			printf("Neispravan unos!\n");
-		}
-	} while (a < -1000000 || c>1000000 || b < 0 || d>1000000 || d<0 || c<0);
+    while (!(a >= -1000000 && a <= 1000000 && c >= -1000000 && c <= 1000000 && b >= 0 && b <= 1000000 && d >= 0 && d <= 1000000)) {
+        printf("Neispravan unos!\n");
+        scanf("%lld %lld %lld %lld", &a, &b, &c, &d);
+    }
 
-	ispis(a, b, c, d, &ab, &cd);
+    long long int br1 = funkcija(a, b);
+    long long int br2 = funkcija(c, d);
 
-	printf("%lld+%lld=%lld\n%lld-%lld=%lld \n%lld*%lld=%lld", ab,cd,ab+cd, ab, cd, ab - cd, ab, cd, ab * cd );
-	
-
-
-	return 0;
-
+    if (-1000000000 <= br1 && br1 <= 1000000000 && -1000000000 <= br2 && br2 <= 1000000000) {
+        printf("\n%lld+%lld=%lld", br1, br2, br1+br2);
+        printf("\n%lld-%lld=%lld", br1, br2, br1-br2);
+        printf("\n%lld*%lld=%lld", br1, br2, br1 * br2);
+    }
 }
