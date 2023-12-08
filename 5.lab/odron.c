@@ -6,22 +6,18 @@ TEKST ZADATKA I TEST CASEOVI: https://github.com/emanuelkufrin/tvz_c-2023/blob/f
 #include <stdio.h>
 #include <math.h>
 
-void odron(int smece[], int a, int b, int Z) {
-	if (Z / 2 == 1) {
-		Z = Z;
-	}
-	else {
-		Z /= 2;
-	}
+void odron(int smece[], int a, int b, int Brdo) {
+	
+	Brdo /= 2;
 	
 	
 	if (smece[a] > smece[b]) {
-			smece[b] += Z;
-			smece[a] -= Z;
+			smece[b] += Brdo;
+			smece[a] -= Brdo;
 	}
 	else {
-		smece[b] -= Z;
-		smece[a] += Z;
+		smece[b] -= Brdo;
+		smece[a] += Brdo;
 	}
 
 
