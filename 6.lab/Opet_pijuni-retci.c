@@ -64,7 +64,6 @@ int main() {
 	}
 
 	for (int i = 0; i < n; i++) {
-		free(novo_polje[i]);
 		free(polje[i]);
 	}
 
