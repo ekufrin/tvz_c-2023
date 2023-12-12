@@ -40,9 +40,10 @@ void prebroji(char** polje, int n, int m, int* novo_polje) {
 int main() {
 
 	int n = 0, m = 0, k = 0;
-	int* novo_polje = (int*)malloc(m * sizeof(int));
+	
 
 	scanf("%d %d %d", &n, &m, &k);
+	int* novo_polje = (int*)malloc(m * sizeof(int));
 	char** polje = (char**)malloc(n * sizeof(char*));
 	for (int i = 0; i < n; i++) {
 		polje[i] = (char*)malloc(m * sizeof(char));
