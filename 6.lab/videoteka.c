@@ -14,9 +14,9 @@ int main()
     int n, m;
     scanf("%d %d", &n, &m);
 
-    char** polica = (char**)malloc(sizeof(char**) * n);
+    char** polica = (char**)malloc(sizeof(char*) * n);
     for (int i = 0; i < n; i++) {
-        polica[i] = (char*)malloc(sizeof(char*) * m);
+        polica[i] = (char*)malloc(sizeof(char) * m);
     }
 
     for (int i = 0; i < n; i++) {
