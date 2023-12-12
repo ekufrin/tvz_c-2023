@@ -17,6 +17,7 @@
 [3.tjedan](/3.lab)
 [4.tjedan](/4.lab)
 [5.tjedan](/5.lab)
+[6.tjedan](/6.lab)
 
 ### Zadaci sa kolokvija
 *[2023](/2023.kolokvij)*
