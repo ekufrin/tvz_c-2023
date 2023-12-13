@@ -73,7 +73,7 @@ Najmanji neparni element matrice je 13, na lokaciji [4,4].
 void ispis(int** matrica, int n) {
 	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= n; j++) {
-			printf("%d ", matrica[i][j]);
+			printf("%5d", matrica[i][j]);
 		}
 		printf("\n");
 	}
