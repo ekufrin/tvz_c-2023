@@ -21,6 +21,9 @@
 [6.tjedan](/6.lab)
 [7.tjedan](/7.lab)
 
+#### [Stari labosi](/stari-labosi)
+
+
 ### Zadaci sa kolokvija
 *[2023](/2023.kolokvij)*
 [2021](/2021.kolokviji)
