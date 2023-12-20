@@ -30,64 +30,98 @@ Primjer izlaza:
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
-char* datumi(char* dat, char* pred);
+char* datumizacija(char* dat, char* pred)
+{
+int duljina = strlen(dat);
+int brojmj = 0;
+int brojdan = 0;
+int brojgod = 0;
+int flag = 0;
+char mjeseci[5] = { 0 };
+char dani[5] = { 0 };
+char godine[6] = { 0 };
+char* gotovi = (char*)calloc(20, sizeof(char));
+
+for (int i = 0; i < duljina; i++)
+{
+	if (pred[i] == 'm')
+	{
+		mjeseci[brojmj] = dat[i];
+		brojmj++;
+	}
+	else if (pred[i] == 'd')
+	{
+		dani[brojdan] = dat[i];
+		brojdan++;
+	}
+	else if (pred[i] == 'g')
+	{
+		godine[brojgod] = dat[i];
+		brojgod++;
+		flag = i;
+	}
+}
+
+if (brojgod == 1)
+{
+	godine[1] = dat[flag+1];
+}
+
+if (strlen(dani) == 1)
+{
+	dani[1] = dani[0];
+	dani[0] = '0';
+	dani[2] = '.';
+}
+else if (strlen(dani) == 2)
+{
+	dani[2] = '.';
+}
+
+if (strlen(mjeseci) == 1)
+{
+	mjeseci[1] = mjeseci[0];
+	mjeseci[0] = '0';
+	mjeseci[2] = '.';
+}
+else if (strlen(mjeseci) == 2)
+{
+	mjeseci[2] = '.';
+}
+
+if (strlen(godine) == 2)
+{
+	godine[2] = godine[0];
+	godine[3] = godine[1];
+	godine[0] = '2';
+	godine[1] = '0';
+	godine[4] = '.';
+}
+
+strcat(gotovi, dani);
+strcat(gotovi, mjeseci);
+strcat(gotovi, godine);
+
+return gotovi;
+}
+
 int main()
 {
-	char unesenidatum[20] = {0};
-	char predlozak[20] = {0};
-	scanf("%s %s", unesenidatum, predlozak);
+char datum[20] = { 0 };
+char predlozak[20] = { 0 };
+char* rjesenje = 0;
 
-	char* rjesenje;
-	rjesenje = datumi(unesenidatum, predlozak);
-	printf("%s", rjesenje);
-	return 0;
-}
-char* datumi(char* dat, char* pred) {
-	int duljina = strlen(dat);
-	char dan[5] = { 0 };
-	char mjesec[5] = { 0 };
-	char godina[10] = { 0 };
-	char konacni[12] = { 0 };
-	int brdan = 0, brmj = 0, brgod = 0;
+scanf("%s", datum);
+scanf("%s", predlozak);
 
-	for (int i = 0; i < duljina; i++) {
-		if (pred[i] == 'd') {
-			dan[brdan] = dat[i];
-			brdan++;
-		}
-		else if (pred[i] == 'm') {
-			mjesec[brmj] = dat[i];
-			brmj++;
-		}
-		else if (pred[i] == 'g') {
-			godina[brgod] = dat[i];
-			brgod++;
-		}
-	}
-	if (strlen(dan) == 1) {
-		dan[1] = dan[0];
-		dan[0] = '0';
-	}
-	if (strlen(mjesec) == 1) {
-		mjesec[1] = mjesec[0];
-		mjesec[0] = '0';
-	}
-	if (strlen(godina) == 2) {
-		godina[2] = godina[0];
-		godina[3] = godina[1];
-		godina[0] = '2';
-		godina[1] = '0';
+rjesenje = datumizacija(datum, predlozak);
 
-	}
-	strcat(konacni, dan);
-	strcat(konacni, ".");
-	strcat(konacni, mjesec);
-	strcat(konacni, ".");
-	strcat(konacni, godina);
-	strcat(konacni, ".");
+printf("%s", rjesenje);
 
-	return konacni;
+free(rjesenje);
+
+return 0;
 }
