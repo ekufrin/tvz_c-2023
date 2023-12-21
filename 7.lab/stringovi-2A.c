@@ -37,53 +37,50 @@ danas je jedAn jako lijep dAN za programiranje! zar ne? programirajmO!
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 
-int prebroji(char* s);
-char* promijeni(char* s);
+int prebroji(char* s) {
+    int brojac = 0;
+    for (int i = 0; i < strlen(s); i++) {
+        if (s[i] == '!' || s[i] == '?' || s[i] == '.') {
+            brojac++;
+        }
+    }
+
+    return brojac;
+}
+
+char* promijeni(char* s) {
+    for (int i = 0; i < strlen(s); i++) {
+        if (isupper(s[0])) {
+            s[0] = tolower(s[0]);
+        }
+        else if (s[i] == ' ') {
+            s[i + 1] = tolower(s[i + 1]);
+        }
+    }
+
+    return s;
+}
 
 int main()
 {
-    char* s = (char*)calloc(200, sizeof(char));
-    char* s2 = (char*)calloc(200, sizeof(char));
+   
+    char* recenica=(char*)calloc(100,sizeof(char));
 
-    scanf("%[^\n]%*c", s);
+    do {
+        scanf("%[^\n]%*c", recenica);
+        if (prebroji(recenica) == 1) {
+            printf("Neispravan unos.\n");
+        }
+        else {
+            printf("%d\n", prebroji(recenica));
+            break;
+        }
+    } while (1);
+   
+    printf("%s", promijeni(recenica));
 
-    int broj = prebroji(s);
-    while (broj == 1)
-    {
-        printf("Neispravan unos.\n");
-        scanf("%[^\n]%*c", s2);
-        broj = prebroji(s2);
-        strcpy(s, s2);
-    }
-
-    printf("%d\n", broj);
-    char* ss = promijeni(s);
-    printf("%s", ss);
 
     return 0;
-}
-
-int prebroji(char* s)
-{
-    int br = 0;
-    char* tmp2 = (char*)calloc(strlen(s) + 1, sizeof(char));
-    strcpy(tmp2, s);
-    char* tmp = strtok(tmp2, "!?.");
-    while (tmp != NULL)
-    {
-        br++;
-        tmp = strtok(NULL, "!?.");
-    }
-    return br;
-}
-
-char* promijeni(char* s)
-{
-    for (int i = 0; i < strlen(s); i++)
-    {
-        if (isupper(s[i]) && (i == 0 || s[i - 1] == ' '))
-            s[i] = tolower(s[i]);
-    }
-    return s;
 }
