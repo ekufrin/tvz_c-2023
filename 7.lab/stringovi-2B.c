@@ -39,61 +39,56 @@ ProgramirajmO!
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 
-int prebroji(char* s);
-void ispis(char* s);
+int prebroji(char* s) {
+    int brojac = 0;
+    for (int i = 0; i < strlen(s); i++) {
+        if (s[i] == ' ' && isupper(s[i+1])) {
+            brojac++;
+        }
+    }
+    if (isupper(s[0])) {
+        brojac++;
+    }
+
+    return brojac;
+}
+
+void ispis(char* s) {
+    int brojac = 0;
+    for (int i = 0; i < strlen(s); i++) {
+        if (s[i] == '!' || s[i] == '?' || s[i] == '.') {
+            brojac++;
+        }
+    }
+
+    if (brojac == 1) {
+        printf("Niz se sastoji od samo jedne recenice.");
+    }
+    else {
+        for (int i = 0; i < strlen(s); i++) {
+
+            if (s[i-1] == '!' || s[i-1] == '?' || s[i-1] == '.') {
+                printf("\n");
+            }
+            else {
+                printf("%c", s[i]);
+            }
+        }
+    }
+}
 
 int main()
 {
-    char* string = (char*)calloc(200, sizeof(char));
 
-    scanf("%[^\n]", string);
+    char* recenica = (char*)calloc(100, sizeof(char));
 
-    printf("%d\n", prebroji(string));
+    scanf("%[^\n]%*c", recenica);
+    printf("%d\n", prebroji(recenica));
 
-    ispis(string);
+    ispis(recenica);
+
 
     return 0;
-}
-
-int prebroji(char* s)
-{
-    int br = 0;
-
-    for (int i = 0; i < strlen(s); i++)
-    {
-        if (i == 0 && isupper(s[i]))
-            br++;
-        else if (isupper(s[i]) && s[i - 1] == ' ')
-            br++;
-    }
-    return br;
-}
-
-void ispis(char* s)
-{
-    int br = 0;
-    char* tmp = (char*)calloc(strlen(s) + 1, sizeof(char));
-    strcpy(tmp, s);
-    char* rez = strtok(tmp, ".!?");
-    while (rez != NULL)
-    {
-        br++;
-        rez = strtok(NULL, ".!?");
-    }
-    if (br == 1)
-    {
-        printf("Niz se sastoji od samo jedne recenice.");
-        return;
-    }
-    else 
-    {
-        for (int i = 0; i < strlen(s); i++)
-        {
-            if (s[i] == ' ' && (s[i - 1] == '.' || s[i - 1] == '!' || s[i - 1] == '?'))
-                printf("\n");
-            else
-                printf("%c", s[i]);
-        }
-    }
 }
