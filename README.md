@@ -11,6 +11,7 @@
 [5.tjedan](/5.vjezbe)
 [6.tjedan](/6.vjezbe)
 [7.tjedan](/7.vjezbe)
+[8.tjedan](/8.vjezbe)
 
 ### _**Labosi:**_
 [1.tjedan](/1.lab)
