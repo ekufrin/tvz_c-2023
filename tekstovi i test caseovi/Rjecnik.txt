@@ -1,0 +1,12 @@
+lopta: ball, item to play with
+racunalo: computer
+salica: cup, used for drinking various liquids
+stolac: chair, object unavoidable in any seating context
+stol: table, simple object used to put food on while consuming lunch, dinner, or even breakfast
+glazba: music, abstract concept of producing tones in a certaing melody
+igrati: to play, to dance
+svirati: to play music, to play an instrument
+pjevati: to sing, to produce
+skakati: to jump, perform jump action
+stajati: to stand, action of standing in a position
+obraniti: to defend, act on defending certain cause, object or person
