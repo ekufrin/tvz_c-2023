@@ -14,7 +14,7 @@ koje je taj član posudio.
 U slučaju da se neki od žanrova ponavlja, potrebno ga je ispisati samo jednom.
 U slučaju da se upiše nepostojeći član, potrebno je ispisati poruku "Nije pronadjen zapis.". 
 
-POTREBNE DATOTEKE: https://github.com/emanuelkufrin/tvz_c-2023/blob/24c2273bc052610bb4b0d2a3e463b8e609559df4/tekstovi%20i%20test%20caseovi/%5B8%5DKnjiznica-2.zip
+POTREBNE DATOTEKE: https://github.com/emanuelkufrin/tvz_c-2023/blob/0f7e1882cec893d01b9c89f6217201e4517e11b6/tekstovi%20i%20test%20caseovi/%5B8%5DKnjiznica.zip
 */
 
 #define _CRT_SECURE_NO_WARNINGS
