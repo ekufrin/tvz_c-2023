@@ -1,0 +1,13 @@
+lako: lagano, trivijalno, s lakocom
+napeto: stresno
+lijepo: krasno, divno, milo
+interesantno: zanimljivo, s dozom zanimljivosti
+dugo: dugacko
+tesko: ne lagano, tezacki, otesko
+okruglo: zaobljeno, kuglasto, optimalno
+hladno: ledeno, netoplo, bez topline, odstuno, bez osjecaja
+kapak: pokrivalo za oko, nadocnik
+kravata: okovratni dopupnik
+laptop: skutnik
+internet: svemrezje, medjumrezje, medjunarodna mreza informacija
+kip: skulptura, statua
