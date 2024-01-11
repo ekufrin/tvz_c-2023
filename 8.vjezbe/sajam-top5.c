@@ -2,6 +2,8 @@
 Potrebno je izmjeniti originalni zadatak na način da se učitava samo min i max duljina, a ispisuju brodovi poredano po cijeni uzlazno, a nakon toga po hali.
 Ispisati samo top 5 najjeftinijih.
 
+Datoteku možete preuzeti ovdje: https://github.com/emanuelkufrin/tvz_c-2023/blob/28678bc5acacec94c22e6e110cfe9e3a63ea15dd/tekstovi%20i%20test%20caseovi/%5B8%5D%20Sajam.zip
+
 Opis datoteka
 
 modeli.dat
