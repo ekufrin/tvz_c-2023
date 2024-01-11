@@ -21,6 +21,7 @@
 [5.tjedan](/5.lab)
 [6.tjedan](/6.lab)
 [7.tjedan](/7.lab)
+[8.tjedan](/8.lab)
 
 #### [Stari labosi](/stari-labosi)
 
