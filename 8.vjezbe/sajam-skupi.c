@@ -30,189 +30,95 @@ POTREBNE DATOTEKE: https://github.com/emanuelkufrin/tvz_c-2023/blob/fb11da54723c
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
-typedef struct {
-int id;
-char naziv[100];
-char kategorija[50];
-float duljina;
-int broj_lezajeva;
-int broj_soba;
-int cijena;
+typedef struct{
+    int id;
+    char naz_model[100];
+    char kategorija[50];
+    float duljina;
+    int br_lezaja;
+    int br_soba;
+    int cijena;
 }model;
 
 typedef struct {
-char hala[6];
-int model;
-char ime[100];
-char fleet_op[100];
-char booth[5];
-}jahta;
+    char hala[6];
+    int id;
+    char ime[100];
+    char fleet_op[20];
+    int booth[3];
+}sajam;
+
 
 int main()
 {
-FILE* dat1 = NULL;
-FILE* dat2 = NULL;
-FILE* dat3 = NULL;
-model popis[150];
-model rez[100];
-jahta niz[110], tmp;
-int br = 0, velicina, mincijena, maxcijena;
+    FILE* file = fopen("modeli.dat", "rb");
+    FILE* file1 = fopen("sajam.txt", "r");
+    FILE* file2 = fopen("rezultat.out", "w");
+    model mod[150], rez[100], tmp;
+    sajam saj[110], temp;
+    int i = 0, j = 0, velicina, mincijena, maxcijena;
 
-scanf("%d-%d", &mincijena, &maxcijena);
+    scanf("%d-%d", &mincijena, &maxcijena);
 
-dat1 = fopen("modeli.dat", "rb");
-dat2 = fopen("sajam.txt", "r");
-dat3 = fopen("rezultat.out", "w");
+    fseek(file, 0, SEEK_END);
+    velicina = ftell(file) / sizeof(model);
+    fseek(file, 0, SEEK_SET);
 
-fseek(dat1, 0, SEEK_END);
-velicina = ftell(dat1) / sizeof(model);
-fseek(dat1, 0, SEEK_SET);
+    fread(mod, sizeof(model), velicina, file);
 
-fread(popis, sizeof(model), velicina, dat1);
-
-while (fscanf(dat2, "%[^ ] %d %[^#]#%[^#]#%[^\n]\n", tmp.hala, &tmp.model, tmp.ime, tmp.fleet_op, tmp.booth) == 5)
-{
-    for (int i = 0; i < velicina; i++)
-    {
-        if (tmp.model == popis[i].id)
-        {
-            if (popis[i].cijena >= mincijena && popis[i].cijena <= maxcijena)
-            {
-                niz[br] = tmp;
-                br++;
-            }
-        }
-    }
-}
-int brojac = 0;
-for (int i = 0; i < br; i++)
-{
-    for (int i = 0; i < br - 1; i++)
-    {
-        if (strlen(niz[i].hala) > strlen(niz[i + 1].hala))
-        {
-            for (int j = 0; j < strlen(niz[i].hala); j++)
-            {
-                if (niz[i].hala[j] > niz[i + 1].hala[j])
-                {
-                    jahta tmp2 = niz[i];
-                    niz[i] = niz[i + 1];
-                    niz[i + 1] = tmp2;
-                    break;
+    while (fscanf(file1, "%[^ ] %d %[^#]#%[^#]#%[^\n]\n", temp.hala, &temp.id, temp.ime, temp.fleet_op, temp.booth) != EOF) {
+        for (int i = 0; i < velicina; i++) {
+            if (temp.id == mod[i].id) {
+                if (mod[i].cijena >= mincijena && mod[i].cijena <= maxcijena) {
+                    rez[j] = mod[i];
+                    saj[j] = temp;
+                    j++;
                 }
-                else if (niz[i].hala[j] == niz[i + 1].hala[j])
-                    brojac++;
-                else
-                    break;
             }
         }
-        else
-        {
-            for (int j = 0; j < strlen(niz[i + 1].hala); j++)
-            {
-                if (niz[i].hala[j] > niz[i + 1].hala[j])
-                {
-                    jahta tmp2 = niz[i];
-                    niz[i] = niz[i + 1];
-                    niz[i + 1] = tmp2;
-                    break;
+    }
+
+    for (i = 0; i <= j; i++) {
+        for (int z = i + 1; z <= j; z++) {
+            if (rez[z].cijena > rez[i].cijena) {
+                tmp = rez[i];
+                rez[i] = rez[z];
+                rez[z] = tmp;
+
+                temp = saj[i];
+                saj[i] = saj[z];
+                saj[z] = temp;
+            }
+        }
+    }
+
+    for (i = 0; i <= j; i++) {
+        for (int z = i + 1; z <= j; z++) {
+            if (rez[z].cijena == rez[i].cijena) {
+                if (strcmp(saj[z].hala, saj[i].hala) < 0) {
+                    tmp = rez[i];
+                    rez[i] = rez[z];
+                    rez[z] = tmp;
+
+                    temp = saj[i];
+                    saj[i] = saj[z];
+                    saj[z] = temp;
                 }
-                else if (niz[i].hala[j] == niz[i + 1].hala[j])
-                    brojac++;
-                else
-                    break;
             }
         }
-        if (strcmp(niz[i].hala, niz[i + 1].hala) == 0)
-        {
-            if (niz[i].ime[0] > niz[i + 1].ime[0])
-            {
-                jahta tmp2 = niz[i];
-                niz[i] = niz[i + 1];
-                niz[i + 1] = tmp2;
-            }
-        }
-        brojac = 0;
     }
-}
 
-int cijene[100], b = 0;
-
-for (int i = 0; i < br; i++)
-{
-    for (int j = 0; j < velicina; j++)
-    {
-        if (niz[i].model == popis[j].id)
-        {
-            cijene[i] = popis[j].cijena;
-            break;
-        }
+    for (int z = 0; z < 6; z++) {
+        printf("%s(%s) %s %s %.02f %d EUR\n", saj[z].hala, saj[z].booth, rez[z].naz_model, saj[z].ime, rez[z].duljina, rez[z].cijena);
+        fprintf(file2, "%s(%s) %s %s %.02f %d EUR\n", saj[z].hala, saj[z].booth, rez[z].naz_model, saj[z].ime, rez[z].duljina, rez[z].cijena);
     }
+    
+    fclose(file);
+    fclose(file1);
+    fclose(file2);
+
+    return 0;
 }
 
-for (int i = 0; i < br; i++)
-{
-    for (int i = 0; i < br - 1; i++)
-    {
-         if (cijene[i] < cijene[i+1])
-         {
-            jahta tmp2 = niz[i];
-            niz[i] = niz[i + 1];
-            niz[i + 1] = tmp2;
-
-            int tmpc = cijene[i];
-            cijene[i] = cijene[i + 1];
-            cijene[i + 1] = tmpc;
-         }
-         else if (cijene[i] == cijene[i + 1])
-         {
-             if (strcmp(niz[i].hala, niz[i + 1].hala) == 0)
-             {
-                 if (niz[i].booth[0] < niz[i + 1].booth[0])
-                 {
-                     jahta tmp2 = niz[i];
-                     niz[i] = niz[i + 1];
-                     niz[i + 1] = tmp2;
-
-                     int tmpc = cijene[i];
-                     cijene[i] = cijene[i + 1];
-                     cijene[i + 1] = tmpc;
-                 }
-             }
-         }
-    }
-}
-
-if (br < 6)
-{ 
-    for (int i = 0; i < br; i++)
-    {
-        for (int j = 0; j < velicina; j++)
-        {
-            if (niz[i].model == popis[j].id)
-                fprintf(dat3, "%s(%s) %s %s %.2f %d EUR\n", niz[i].hala, niz[i].booth, popis[j].naziv, niz[i].ime, popis[j].duljina, popis[j].cijena);
-        }
-    }
-}
-else
-{
-    for (int i = 0; i < 6; i++)
-    {
-        for (int j = 0; j < velicina; j++)
-        {
-            if (niz[i].model == popis[j].id)
-                fprintf(dat3, "%s(%s) %s %s %.2f %d EUR\n", niz[i].hala, niz[i].booth, popis[j].naziv, niz[i].ime, popis[j].duljina, popis[j].cijena);
-        }
-    }
-}
-
-
-fclose(dat1);
-fclose(dat2);
-fclose(dat3);
-
-return 0;
-}
