@@ -43,9 +43,6 @@ void maxASCII(char* recenica) {
                         strcpy(maxRijec, rijec);
                         break;
                     }
-                    else if ((int)tolower(rijec[i]) < (int)tolower(maxRijec[i])) {
-                        break;
-                    }
                 }
             }
             rijec[0] = '\0';
