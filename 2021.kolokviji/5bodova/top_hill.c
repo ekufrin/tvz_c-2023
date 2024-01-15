@@ -29,8 +29,8 @@ int main() {
 void funkcija(int matrica[][MAX], int n, int m)
 {
     int maxBroj = 0, red, stupac, k = 0;
-    for (int i = 1; i < n; i++) {
-        for (int j = 1; j < m; j++) {
+    for (int i = 1; i < n - 1; i++) {
+        for (int j = 1; j < m - 1; j++) {
             if (matrica[i][j] > matrica[i - 1][j] && matrica[i][j] > matrica[i + 1][j] &&
                 matrica[i][j] > matrica[i][j - 1] && matrica[i][j] > matrica[i][j + 1]) {
                 if (matrica[i][j] > maxBroj) {
