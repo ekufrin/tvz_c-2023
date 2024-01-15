@@ -2,6 +2,7 @@
 TEKST ZADATKA I TEST CASEOVI: https://github.com/emanuelkufrin/tvz_c-2023/blob/eed8701fe9482f04924781d070228821127f9573/tekstovi%20i%20test%20caseovi/%5B2021.kol%5D%5B2%5DASCII%20maker.pdf
 */
 #define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -41,6 +42,9 @@ void maxASCII(char* recenica) {
                     if ((int)tolower(rijec[i]) < (int)tolower(maxRijec[i])) {
                         maxSuma = suma;
                         strcpy(maxRijec, rijec);
+                        break;
+                    }
+                    else if ((int)tolower(rijec[i]) > (int)tolower(maxRijec[i])) {
                         break;
                     }
                 }
