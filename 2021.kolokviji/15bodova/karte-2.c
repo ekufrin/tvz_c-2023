@@ -38,7 +38,7 @@ int main() {
 				ukupna_cijena += koncert.cijena_koncerta;
 			}
 		}
-		printf("%s %s %s: %.2lf\n", naziv, datum, vrijeme, ukupna_cijena);
+		fprintf(izlaz_podatci,"%s %s %s: %.2lf\n", naziv, datum, vrijeme, ukupna_cijena);
 		fseek(ulaz_karte, 0, SEEK_SET);
 		ukupna_cijena = 0;
 	}
