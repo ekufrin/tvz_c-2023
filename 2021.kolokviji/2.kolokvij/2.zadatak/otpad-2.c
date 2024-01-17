@@ -23,7 +23,7 @@ int main()
     char vrsta[15] = { 0 };
     int kolicina;
 
-    scanf("%s %d", vrsta, &kolicina);
+    scanf("%d %s",&kolicina,vrsta);
 
     FILE* ulaz = fopen("otpad.txt", "r");
 
