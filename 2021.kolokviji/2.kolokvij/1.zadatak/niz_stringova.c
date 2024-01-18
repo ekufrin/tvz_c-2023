@@ -98,17 +98,17 @@ for (int i = 0; i < br; i++)
 
 for (int i = 0; i < br; i++)
 {
-	for (int i = 0; i < br-1; i++)
+	for (int j = 0; j < br-1; j++)
 	{
-		if (brojaci[i] < brojaci[i + 1])
+		if (brojaci[j] < brojaci[j + 1])
 		{
-			int tmp1 = brojaci[i];
-			brojaci[i] = brojaci[i + 1];
-			brojaci[i + 1] = tmp1;
+			int tmp1 = brojaci[j];
+			brojaci[j] = brojaci[j + 1];
+			brojaci[j + 1] = tmp1;
 
-			tmp = recenice[i];
-			recenice[i] = recenice[i + 1];
-			recenice[i + 1] = tmp;
+			tmp = recenice[j];
+			recenice[j] = recenice[j + 1];
+			recenice[j + 1] = tmp;
 		}
 	}
 }
