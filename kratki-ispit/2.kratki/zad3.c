@@ -17,11 +17,14 @@ struct {
 int main() {
    
 	p = niz;
-	printf("%d%s;", p->len, p->str + 1); // Ispis bi bio: 3ri;
+	do printf("%d%s;", p->len, p->str + 1); // Ispis bi bio: 3ri;5et;6est;
+	while (p++ && p->len); //svaki put povecavamo adresu p (odnosno niza) za jedan, to jest, krecemo se po nizu dok ne izađemo izvan granica niza
+	//p->len je pointer na int len u structu
+	//p->str+1 je pointer na char* str u structu pomaknut za 1 slovo u desno;
 
-	//p->len je pointer na int len u structu, sto za niz[0] iznosi 3
-	//p->str+1 je pointer na char* str u structu, sto za niz[0] iznosi tri, ali posto je +1 znaci da preskacemo prvo slovo i ispisujemo samo tr
-
+	//1.ispis: niz[0].len je 3		|		niz[0].str+1 je tr
+	//2.ispis: niz[1].len je 5		|		niz[1].str+1 je et
+	//3.ispis: niz[2].len je 5		|		niz[2].str+1 je est
 
 
 	return 0;
