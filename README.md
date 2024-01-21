@@ -30,6 +30,9 @@
 *[2023](/2023.kolokvij)*
 [2021](/2021.kolokviji)
 
+### Zadaci sa kratkih ispita
+*[Kratki ispit](/kratki-ispit)*
+
 ## _Kako uploadati Vaš kod na Github?_
 1. Kreirajte Github account.
 2. Klikom na [Issues](https://github.com/emanuelkufrin/tvz_c-2023/issues) otvorite New issue.
