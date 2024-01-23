@@ -22,6 +22,6 @@ void main(int argc, char* argv[]) {
     b2 = atoi(argv[4]);     // atoi pretvara string u int;
 
     //argc je broj elemenata koji se upisuje u komandnu liniju +1, u ovom slucaju 4+1=5
-    //argv krece od 1 i to je niz elemenata po redu koji su upisani u komandnu liniju
+    //argv krece od 0 i to je niz elemenata po redu koji su upisani u komandnu liniju
     //isprintajte p1,p2,b1,b2 za više informacija
 }
