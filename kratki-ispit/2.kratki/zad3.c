@@ -22,7 +22,7 @@ int main() {
 	//p->len je pointer na int len u structu
 	//p->str+1 je pointer na char* str u structu pomaknut za 1 slovo u desno;
 
-	//1.ispis: niz[0].len je 3		|		niz[0].str+1 je tr
+	//1.ispis: niz[0].len je 3		|		niz[0].str+1 je ri
 	//2.ispis: niz[1].len je 5		|		niz[1].str+1 je et
 	//3.ispis: niz[2].len je 6		|		niz[2].str+1 je est
 
