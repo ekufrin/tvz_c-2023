@@ -24,7 +24,7 @@ int main() {
 
 	//1.ispis: niz[0].len je 3		|		niz[0].str+1 je tr
 	//2.ispis: niz[1].len je 5		|		niz[1].str+1 je et
-	//3.ispis: niz[2].len je 5		|		niz[2].str+1 je est
+	//3.ispis: niz[2].len je 6		|		niz[2].str+1 je est
 
 
 	return 0;
