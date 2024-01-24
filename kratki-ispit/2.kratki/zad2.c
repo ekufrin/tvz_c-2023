@@ -16,10 +16,11 @@ void main(int argc, char* argv[]) {
     char* p1, * p2;
     int b1, b2;
 
-    p1 = argv[1];
-    p2 = argv[3];
-    b1 = atoi(argv[2]);     // svi ulazi s komandne linije se spremaju kao stringovi, stoga je potrebno koristiti funkciju atoi
-    b2 = atoi(argv[4]);     // atoi pretvara string u int;
+    p1 = argv[0];
+    p2 = argv[2];
+    b1 = atoi(argv[1]);     // svi ulazi s komandne linije se spremaju kao stringovi, stoga je potrebno koristiti funkciju atoi
+    b2 = atoi(argv[3]);     // atoi pretvara string u int;
+
 
     //argc je broj elemenata koji se upisuje u komandnu liniju +1, u ovom slucaju 4+1=5
     //argv krece od 0 i to je niz elemenata po redu koji su upisani u komandnu liniju
