@@ -15,7 +15,7 @@ Pretpostavite da postoji definirana struktura Proizvod i varijabla Proizvod p[10
 
 int main() {
 	
-	int br = 70;
+	int br = 69;
 	fseek(fin, -5 * sizeof(struct Proizvod), SEEK_END);
 	fread(&p[br++], sizeof(struct Proizvod), 1, fin);
 
