@@ -6,6 +6,6 @@ Napišite primjer dva retka datoteke koji odgovaraju gornjoj naredbi, gdje je bi
 
 
 ODGOVOR:
-Goveđi gulaš| Gulaši5 19.99
-Kako naučiti C?| Knjiga1 34.21
+Goveđi gulaš| Gulaši5 EUR19.99
+Kako naučiti C?| Knjiga1  34.21
 */
