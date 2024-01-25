@@ -19,10 +19,10 @@ void main(int argc, char* argv[]) {
 		char* ptr;
 		strcpy(pom, argv[5] + 3);	//U niz pom kopiramo 5. element argv pomaknut za 3 slova u desno : akademske+3=demske
 		printf("%s;", pom);			//demske;
-		ptr = strchr(argv[6], 'd');	//U ptr kopiramo 6.element argv nakon što pronađemo prvi znak 'd' u njemu : godine = dine
-		printf("%s;", ptr);			//dine;
+		ptr = strchr(argv[6], 'd');	//U ptr kopiramo 6.element argv nakon što pronađemo prvi znak 'd' u njemu : godine. = dine.
+		printf("%s;", ptr);			//dine.;
 		printf("%d.", argc);		//Ukupno ima 7 elemenata
 
-		// KONACNI REZULTAT: demske;dine;7.
+		// KONACNI REZULTAT: demske;dine.;7.
 
 }
