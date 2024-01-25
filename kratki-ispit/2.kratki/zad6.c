@@ -1,6 +1,6 @@
 /*
 TEKST ZADATKA:
-Na 5 načina prikazati pridruživanje varijabli x koja je tipa char znamenku 7. (nadopuniti izrazom za pridruživam
+Na 5 načina prikazati pridruživanje varijabli x koja je tipa char znamenku 7. (nadopuniti izrazom za pridruživanje)
 */
 
 
