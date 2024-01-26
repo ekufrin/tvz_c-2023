@@ -14,7 +14,7 @@ Strukturu Student ne treba definirati, već samo varijablu za jednog studenta.
 int main() {
 
 	Student s1;
-	fscanf(ulaz, "%[^ ] %[^,] %[^:]: %d", s1.jmbag, s1.prezime, s1.ime, s1.broj_bodova);
+	fscanf(ulaz, "%[^ ] %[^,], %[^:]: %d", s1.jmbag, s1.prezime, s1.ime, s1.broj_bodova);
 
 	return 0;
 }
